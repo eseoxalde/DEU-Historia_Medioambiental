@@ -9,6 +9,8 @@ import NewPuntoInfo from '@/components/puntoInfo/NewPuntoInfo'
 import SignUp from '@/components/user/SignUp'
 import LogIn from '@/components/user/LogIn'
 
+import Nosotros from '@/components/sitio/Nosotros'
+
 import Investigador from '@/components/user/Investigador'
 import Espectador from '@/components/user/Espectador'
 import Administrador from '@/components/user/Administrador'
@@ -27,6 +29,11 @@ export default new Router({
       path: '/registrarse',
       name: 'SignUp',
       component: SignUp
+    },
+    {
+      path: '/nosotros',
+      name: 'Nosotros',
+      component: Nosotros
     },
     {
       path: '/investigador',

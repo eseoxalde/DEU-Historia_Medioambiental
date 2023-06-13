@@ -4,6 +4,7 @@ Requerimientos
 * django 4,2,2
 **django-webpack-loader
 * vue 5,0,8
+* npm 8.5.1
 * node v18.16.0
 ** sweetalert (responsive, accesible-wai-aria)
 

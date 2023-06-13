@@ -3,22 +3,24 @@
         <div class="row">
             <div class="col text-left">
                 <div>
-                <h2>Listado de Puntos de Info</h2>
-                <b-button size="sm" :to="{name:'NewPuntoInfo' }" variant="primary">
-                    Crear
-                </b-button>
-            </div>
-            <br>
+                    <h2>Listado de Puntos de información</h2>
+                    <b-button size="sm" :to="{ name: 'NewPuntoInfo' }" variant="primary">
+                        Crear
+                    </b-button>
+                </div>
+                <br>
                 <div calss="col-md-12">
                     <b-table striped hover :items="puntoInfo" :fields="fields">
 
                         <template v-slot:cell(action)="data">
-                            <b-button size="sm" variant="primary" :to="{ name: 'EditPuntoInfo', params: {puntoInfoId: data.item.id} }">
+                            <b-button size="sm" variant="primary"
+                                :to="{ name: 'EditPuntoInfo', params: { puntoInfoId: data.item.id } }">
                                 Editar
                             </b-button>
-                        <b-button size="sm" variant="danger" :to="{ name: 'DeletePuntoInfo', params: {puntoInfoId: data.item.id} }">
+                            <b-button size="sm" variant="danger"
+                                :to="{ name: 'DeletePuntoInfo', params: { puntoInfoId: data.item.id } }">
                                 Eliminar
-                        </b-button>
+                            </b-button>
                         </template>
                     </b-table>
 
@@ -32,9 +34,9 @@
 <script>
 import axios from 'axios';
 
-export default{
-    data (){
-        return{
+export default {
+    data() {
+        return {
             fields: [
                 { key: 'title', label: 'Título' },
                 { key: 'description', label: 'Descripción' },
@@ -43,23 +45,27 @@ export default{
             puntoInfo: []
         }
     },
-    methods:{
-        getPuntoInfo(){
+    methods: {
+        getPuntoInfo() {
 
             const path = `${process.env.BASE_URI}/puntosInfo/`
             axios.get(path).then((response => {
                 this.puntoInfo = response.data
             }))
-            .catch((error) =>{
-                console.log(error)
-            })
+                .catch((error) => {
+                    console.log(error)
+                })
         }
     },
-    created(){
+    created() {
         this.getPuntoInfo()
     }
 }
 </script>
 
 <style lang="css" scoped>
+.container {
+    background-color: beige;
+    margin: 5px;
+}
 </style>

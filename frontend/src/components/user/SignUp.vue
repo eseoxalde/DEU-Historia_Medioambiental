@@ -1,43 +1,70 @@
 <template>
-    <div clas="login">
-        <h1>Registrarse</h1>
+    <div class="b-container">
+        <b-row>
+            <b-col sm="4"></b-col>
+            <b-col sm="4" class="login-title">
+                <h1>Registrarse</h1>
+            </b-col>
+            <b-col sm="4"></b-col>
+        </b-row>
+        <b-row>
+            <b-col sm="4"></b-col>
+            <b-col sm="4" align-self="center" class="login">
+                <b-form @submit="onSubmit" @reset="onReset">
+                    <hr />
+                    <b-form-group id="login-email-group" label="Correo electrónico" label-for="login-email"
+                        description="Correo electrónico para poder iniciar sesión">
+                        <b-form-input id="login-email" v-model="form.email" type="email"
+                            placeholder="Ingrese su correo electrónico" required="required">
+                        </b-form-input>
+                    </b-form-group>
+                    <b-form-group id="login-password-group" label="Contraseña" label-for="login-password"
+                        description="Contraseña para poder iniciar sesión">
+                        <b-form-input id="login-password" v-model="form.email" type="password"
+                            placeholder="Ingrese su contraseña" required="required">
+                        </b-form-input>
+                    </b-form-group>
+                    <b-button type="submit" variant="primary" class="btn active">Registrarse</b-button>
+                    <b-button type="reset" variant="danger" class="btn">Cancelar</b-button>
+                </b-form>
+            </b-col>
+            <b-col sm="4"></b-col>
+        </b-row>
 
-        <form @submit.prevent="submitForm">
-            <input type="email" name="username" v-model="username">
-            <input type="password" name="password" v-model="password">
-            <button type="submit">Registrarse</button>
-        </form>
     </div>
 </template>
-
+  
 <script>
-import axios from 'axios';
-
-    export default {
-        name: 'SignUp',
-        data(){
-            return{
-                username:'',
-                password:''
-            }
-        },
-        methods:{
-            submitForm(e){
-                const formData = {
-                username:this.username,
-                password: this.password
-                }
-
-                axios
-                    .post('ListPuntoInfo', formData)
-                    .then(response => {
-                        this.$router.push('/logIn')
-                        console.log(response)
-                    })
-                    .catch(error =>{
-                        console.log(error)
-                    })
+export default {
+    data() {
+        return {
+            form: {
+                email: '',
             }
         }
+    },
+    methods: {
+        onSubmit(event) {
+            console.log(data)
+        },
+        onReset(event) {
+            this.form.email = ''
+            this.form.password = ''
+        }
     }
+}
 </script>
+  
+<style>
+.login {
+    background-color: honeydew;
+    padding: 10px
+}
+
+.login-title {
+    background-color: honeydew;
+    margin-top: 5px;
+}
+</style>
+  
+  

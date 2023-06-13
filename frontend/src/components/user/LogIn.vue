@@ -1,53 +1,76 @@
 <template>
-    <div class="container">
-        <div class="login">
-            <h1>Inicio de sesión</h1>
-            <hr/>
-            <form>
-              <div class="form-outline mb-4">
-                <label for="email">Correo electrónico</label>
-                <input type="email" id="email" class="form-control w-75" />
-              </div>
-              <div class="form-outline mb-4">
-                <label class="form-label" for="password">Constraseña</label>
-                <input type="password" id="password" class="form-control w-75" />
-              </div>
-              <div class="col">
-                <a href="#!">¿Olvidaste la contraseña?</a>
-              </div>
-              <button type="button" class="btn btn-primary active">Iniciar sesión</button>
-              <hr/>
-              <p>Registrate como investigador</p>
-              <div class="text-center">
-                <button type="button" class="btn btn-primary" href="#!">Registrarse</button>
-              </div>
-            </form>
+  <div class="b-container">
+    <b-row>
+      <b-col sm="4"></b-col>
+      <b-col sm="4" class="login-title">
+        <h1>Inicio de sesión</h1>
+      </b-col>
+      <b-col sm="4"></b-col>
+    </b-row>
+    <b-row>
+      <b-col sm="4"></b-col>
+      <b-col sm="4" align-self="center" class="login">
+        <b-form @submit="onSubmit" @reset="onReset">
+          <hr />
+          <b-form-group id="login-email-group" label="Correo electrónico" label-for="login-email"
+            description="Correo electrónico para poder iniciar sesión">
+            <b-form-input id="login-email" v-model="form.email" type="email" placeholder="Ingrese su correo electrónico"
+              required="required">
+            </b-form-input>
+          </b-form-group>
+          <b-form-group id="login-password-group" label="Contraseña" label-for="login-password"
+            description="Contraseña para poder iniciar sesión">
+            <b-form-input id="login-password" v-model="form.email" type="password" placeholder="Ingrese su contraseña"
+              required="required">
+            </b-form-input>
+          </b-form-group>
+          <div class="col">
+            <a href="#!">¿Olvidaste la contraseña?</a>
           </div>
-      </div>
+          <b-button type="submit" variant="primary" class="btn active">Iniciar sesión</b-button>
+          <hr />
+          <p>Registrate como investigador</p>
+          <div class="text-center">
+            <b-button type="button" variant="primary" class="btn" href="#!">Registrarse</b-button>
+          </div>
+        </b-form>
+      </b-col>
+      <b-col sm="4"></b-col>
+    </b-row>
+
+  </div>
 </template>
 
 <script>
-    export default {
-        name: 'LogIn',
+export default {
+  data() {
+    return {
+      form: {
+        email: '',
+      }
     }
+  },
+  methods: {
+    onSubmit(event) {
+      console.log(data)
+    },
+    onReset(event) {
+      this.form.email = ''
+      this.form.password = ''
+    }
+  }
+}
 </script>
 
 <style>
+.login {
+  background-color: honeydew;
+  padding: 10px
+}
 
-.login{
-    margin: 15px;
-    padding-bottom: 20px;
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    background-color:#E5E8E8;
-    border-radius: 10%;
-}
-input{
-  margin-left: 10%;
-}
-label{
-  text-align:left;
+.login-title {
+  background-color: honeydew;
+  margin-top: 5px;
 }
 </style>
 
