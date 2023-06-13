@@ -3,6 +3,7 @@
     {% block_content %}
 
     {% if user.is_authenticated %}
+    
 
 -->
 
