@@ -10,6 +10,7 @@ import SignUp from '@/components/user/SignUp'
 import LogIn from '@/components/user/LogIn'
 
 import Nosotros from '@/components/sitio/Nosotros'
+import PaginaEnConstruccion from '@/components/sitio/PaginaEnConstruccion'
 
 import Investigador from '@/components/user/Investigador'
 import Espectador from '@/components/user/Espectador'
@@ -27,32 +28,37 @@ export default new Router({
     },
     {
       path: '/registrarse',
-      name: 'SignUp',
+      name: 'registrarse',
       component: SignUp
     },
     {
       path: '/nosotros',
-      name: 'Nosotros',
+      name: 'nosotros',
       component: Nosotros
     },
     {
+      path: '/enConstruccion',
+      name: 'enConstruccion',
+      component: PaginaEnConstruccion
+    },
+    {
       path: '/investigador',
-      name: 'Investigador',
+      name: 'investigador',
       component: Investigador
     },
     {
       path: '/espectador',
-      name: 'Espectador',
+      name: 'espectador',
       component: Espectador
     },
     {
       path: '/administrador',
-      name: 'Administrador',
+      name: 'administrador',
       component: Administrador
     },
     {
       path: '/puntos',
-      name: 'ListPuntoInfo',
+      name: 'listPuntoInfo',
       component: ListPuntoInfo
     },
     {

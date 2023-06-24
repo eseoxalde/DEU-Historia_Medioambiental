@@ -2,22 +2,22 @@
   <div id="app">
     <div id="nav">
       <nav class="b-container navbar navbar-expand-lg navbar-light bg-light">
-        <b-navbar-brand class="navbar-brand" :to="{ name: 'LogIn' }">HM</b-navbar-brand>
+        <b-navbar-brand class="navbar-brand" :to="{ name: 'logIn' }">HM</b-navbar-brand>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <div class="navbar-nav ml-auto">
-            <router-link :to="{ name: 'singUp' }" class="nav-item nav-link">Registrarse</router-link>
+            <router-link :to="{ name: 'registrarse' }" class="nav-item nav-link">Registrarse</router-link>
             <router-link :to="{ name: 'nosotros' }" class="nav-item nav-link">¿Quienes somos?</router-link>
-            <router-link :to="{ name: 'singUp' }" class="nav-link" aria-label="Notificaciones"><i
+            <router-link :to="{ name: 'enConstruccion' }" class="nav-link" aria-label="Notificaciones"><i
                 class="fi fi-rr-bell"></i></router-link>
-            <router-link :to="{ name: 'singUp' }" class="nav-link" aria-label="Buscar"><i
+            <router-link :to="{ name: 'enConstruccion' }" class="nav-link" aria-label="Buscar"><i
                 class="fi fi-rr-search"></i></router-link>
-            <router-link :to="{ name: 'singUp' }" class="nav-link" aria-label="configuracion"><i
+            <router-link :to="{ name: 'enConstruccion' }" class="nav-link" aria-label="configuracion"><i
                 class="fi fi-rr-settings-sliders"></i></router-link>
-            <router-link :to="{ name: 'singUp' }" class="nav-link" aria-label="mi perfil"><i
+            <router-link :to="{ name: 'enConstruccion' }" class="nav-link" aria-label="mi perfil"><i
                 class="fi fi-rr-user"></i></router-link>
           </div>
         </div>
